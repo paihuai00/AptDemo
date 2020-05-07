@@ -13,6 +13,16 @@ import csx.com.annotation_lib.AptTestAnnotation;
 
 /**
  * Apt方法 {@link MainActivity#printTest(String)}
+ *
+ * ButterKnife
+ * https://github.com/JakeWharton/butterknife/blob/master/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+ *
+ * apt目录：compiler_lib/MyProcessor
+ *
+ * 注意：
+ * 1，@AutoService(Processor.class)， 后面是 带“or”的类
+ * 2，不能使用中文，（需要解决）
+ * 3，生成的文件目录为：AptDemo/app/build/generated/source/apt/debug/csx.com.aptdemo
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -43,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onDestroy() {
     super.onDestroy();
-    unbinder.unbind();
 
+    unbinder.unbind();
   }
 
   @OnClick({R.id.tv_content, R.id.btn_test})
